@@ -26,6 +26,18 @@ cmake .. -G "Unix Makefiles" -DSOLOUD_BACKEND_SDL2=OFF -DSOLOUD_BACKEND_ALSA=ON 
 cmake --build . --config Release
 ```
 
+### Soloud MacOS
+```sh
+git clone https://github.com/jarikomppa/soloud.git
+cd soloud/contrib
+mkdir build
+cd build
+cmake .. -G "Unix Makefiles" -DSOLOUD_BACKEND_SDL2=OFF -DSOLOUD_BACKEND_COREAUDIO=ON -DSOLOUD_C_API=ON -DSOLOUD_STATIC=ON -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+cmake --build . --config Release
+# Copy the library to kaiju
+cp build/libsoloud.a /path/to/kaiju/src/libs/libsoloud_darwin.a
+```
+
 ### Soloud Android (on Windows)
 ```sh
 git clone https://github.com/jarikomppa/soloud.git
@@ -52,6 +64,16 @@ mingw32-make -j$(nproc)
 ```
 
 ### Bullet3 Linux
+```sh
+git clone https://github.com/bulletphysics/bullet3.git
+cd bullet3
+mkdir build_static
+cd build_static
+cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS=OFF -DBUILD_CPU_DEMOS=OFF -DBUILD_OPENGL3_DEMOS=OFF -DBUILD_BULLET2_DEMOS=OFF -DBUILD_EXTRAS=OFF -DBUILD_UNIT_TESTS=OFF -DUSE_GLUT=OFF -DINSTALL_LIBS=ON
+make -j$(nproc)
+```
+
+### Bullet3 MacOS
 ```sh
 git clone https://github.com/bulletphysics/bullet3.git
 cd bullet3
