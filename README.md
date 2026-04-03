@@ -91,10 +91,10 @@ toolchain to be installed.
 
 ```sh
 # Build for RISC-V 64
-./build-libs-cross.sh riscv64
+./build-libs.sh riscv64
 
 # Build for ARM 64 (aarch64)
-./build-libs-cross.sh aarch64
+./build-libs.sh aarch64
 ```
 
 The script clones the upstream repositories into a temporary directory,
